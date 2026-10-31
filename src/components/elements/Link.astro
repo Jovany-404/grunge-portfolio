@@ -18,9 +18,12 @@ const variantStyle = {
     button: "font-grunge px-6 py-2 border-2 border-base-900 hover:bg-base-900 hover:text-base-100 text-24 uppercase tracking-wide",
     nav: "font-grunge hover:text-base-700 text-24 uppercase underline underline-offset-4 decoration-2 tracking-wide"
 }
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const resolvedHref = (href.startsWith("/") && !href.startsWith(base)) ? `${base}${href}` : href;
 ---
 
-<a href={href} 
+<a href={resolvedHref} 
     class:list={[baseStyle, variantStyle[variant], className]}
     target={newWindow ? "_blank" : undefined}
     rel={newWindow ? "noopener noreferrer" : undefined}

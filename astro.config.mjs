@@ -26,5 +26,6 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
-  site: "https://grunge.pages.dev"
+  site: "https://jovany-404.github.io",
+  base: "/grunge-portfolio"
 });
